@@ -10,8 +10,12 @@ export const NavBar = () => {
           <a class="nav-link active" aria-current="page" >
             <Link to='/'>Inicio</Link>
           </a>
-          <a class="nav-link" href="#">Inicio de sesión</a>
-          <a class="nav-link" href="#">Registro</a>
+          <a class="nav-link" href="#"> 
+            <Link to="/Login" >Inicio de sesión</Link>
+            </a>
+          <a class="nav-link">
+            <Link to="/Register">Registro</Link>
+            </a>
           <a class="nav-link" href='#'>Perfil usuario</a>
           <a class="nav-link" href='#'>Cuentas</a>
         </div>
