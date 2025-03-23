@@ -3,6 +3,7 @@ import { Home } from './pages/Home'
 import { Route, Routes } from 'react-router-dom'
 import { NotFound } from './components/layout/NotFound'
 import { NavBar } from './components/layout/NavBar'
+import { Profiles } from './pages/Profiles'
 
 export const App = () => {
   return (
@@ -10,6 +11,7 @@ export const App = () => {
       <NavBar />
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/profiles' element={<Profiles />} />
         <Route path='*' element={ <NotFound /> } />
       </Routes>
     </>
