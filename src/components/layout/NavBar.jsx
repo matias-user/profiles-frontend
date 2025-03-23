@@ -8,8 +8,8 @@ export const NavBar = () => {
       <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div className="navbar-nav">
           <Link to='/' className='nav-link active' >Inicio</Link>
-          <a className="nav-link" href="#">Inicio de sesión</a>
-          <a className="nav-link" href="#">Registro</a>
+          <Link to='/login' className='nav-link' >Inicio de sesión</Link>
+          <Link to='/register' className='nav-link' >Registro</Link>
           <Link to='/profiles' className="nav-link">Perfil usuario</Link>
           <a className="nav-link" href='#'>Cuentas</a>
         </div>

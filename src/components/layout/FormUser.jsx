@@ -9,14 +9,12 @@ export const FormUser = ({ urlApi, titleForm }) => {
     useEffect(() => {
         fetchRoles('http://localhost:8080/api/v1/roles')
             .then(data => setroles(data))
-    }, [])
+    }, []);
 
     useEffect(() => {
         console.log(roles);
 
     }, [roles])
-
-
 
     return (
         <>
