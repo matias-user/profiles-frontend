@@ -10,7 +10,7 @@ export const NavBar = () => {
           <Link to='/' className='nav-link active' >Inicio</Link>
           <a className="nav-link" href="#">Inicio de sesión</a>
           <a className="nav-link" href="#">Registro</a>
-          <a className="nav-link" href='#'>Perfil usuario</a>
+          <Link to='/profiles' className="nav-link">Perfil usuario</Link>
           <a className="nav-link" href='#'>Cuentas</a>
         </div>
       </div>

@@ -1,10 +1,9 @@
-import { FormUser } from '../components/layout/FormUser'
+import React from 'react'
 
 export const Home = () => {
-
     return (
         <main className='container-lg' >
-            <FormUser urlApi='http://localhost:8080/api/v1/users' /> 
+            <h1>Página Home</h1>
         </main>
 
     )
