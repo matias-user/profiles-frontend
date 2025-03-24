@@ -4,14 +4,14 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom';
 
 
-const urlApiRoles = 'http://localhost:8080/api/v1/roles'; 
+const pathRouteApiRoles = 'roles'; 
 
 export const FormUser = ({ urlPostApi, titleForm, redirect }) => {
 
     const [roles, setroles] = useState([]);
 
     useEffect(() => {
-        fetchApi(urlApiRoles)
+        fetchApi(pathRouteApiRoles)
             .then(data => setroles(data))
     }, []);
 
