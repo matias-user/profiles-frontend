@@ -1,5 +1,5 @@
 
-export const fetchRoles = ( urlFetch ) => {
+export const fetchApi = ( urlFetch ) => {
 
     return fetch( urlFetch )
         .then( res => res.json() )

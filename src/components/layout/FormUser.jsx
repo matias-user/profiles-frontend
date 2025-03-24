@@ -1,26 +1,25 @@
 import React, { useEffect } from 'react'
-import { fetchRoles } from '../../services/fetchRoles'
+import { fetchApi } from '../../services/fetchApi'
 import { useState } from 'react'
+import { Link } from 'react-router-dom';
 
-export const FormUser = ({ urlApi, titleForm }) => {
+
+const urlApiRoles = 'http://localhost:8080/api/v1/roles'; 
+
+export const FormUser = ({ urlPostApi, titleForm, redirect }) => {
 
     const [roles, setroles] = useState([]);
 
     useEffect(() => {
-        fetchRoles('http://localhost:8080/api/v1/roles')
+        fetchApi(urlApiRoles)
             .then(data => setroles(data))
     }, []);
 
-    useEffect(() => {
-        console.log(roles);
-
-    }, [roles])
-
     return (
         <>
-            <h1>{ titleForm }</h1>
+            <h2 className='mb-2' >{ titleForm }</h2>
 
-            <form action={urlApi} method='POST' >
+            <form action={urlPostApi} method='POST' >
                 <div className='mb-3' >
                     <label className='form-label' htmlFor="username">Username</label>
                     <input className='form-control' type="text" name='username' />
@@ -46,7 +45,7 @@ export const FormUser = ({ urlApi, titleForm }) => {
                     <label className='form-label' htmlFor="roles">Selección de rol</label>
                     <select className='form-select' name="roles[]" id="roles" >
                         <option value="">Selecciona una opción</option>
-                        {roles.map(role => {
+                        { roles &&  roles.map(role => {
                             return <option key={role.id} value={role.id} >{role.name}</option>
                         })}
                     </select>
@@ -54,7 +53,7 @@ export const FormUser = ({ urlApi, titleForm }) => {
 
                 <div className='mb-3' >
                     <button className='btn btn-primary' type='submit' >Enviar</button>
-                    <button className='btn btn-warning ms-3'  >Volver</button>
+                    <Link className='btn btn-warning ms-3' to={ redirect }  >Volver</Link>
                 </div>
             </form>
         </>

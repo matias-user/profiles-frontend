@@ -13,7 +13,7 @@ export const App = () => {
       <NavBar />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/profiles' element={<Profiles />} />
+        <Route path='/profiles/*' element={<Profiles />} />
         <Route path='*' element={ <NotFound /> } />
         <Route path='/login' element={ <Login/> } />
         <Route path='/register' element={ <Register/> } />

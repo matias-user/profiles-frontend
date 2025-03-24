@@ -1,14 +1,15 @@
 import React from 'react'
-import { FormUser } from '../components/layout/FormUser'
+import { SideBar } from '../components/layout/SideBar'
+import { Route, Routes } from 'react-router-dom'
+import { Users } from '../components/users/Users'
 
 export const Profiles = () => {
   return (
     <section className='container' >
-        <h1 className='my-2' >Perfil de usuario XXX</h1>
-        <FormUser 
-            urlApi='http://localhost:8080/api/v1/users'
-            titleForm='Crear usuario'
-            />
+      <SideBar />
+      <Routes>
+        <Route path='users' element={ <Users /> } />
+      </Routes>
     </section>
   )
 }
