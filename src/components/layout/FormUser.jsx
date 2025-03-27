@@ -1,19 +1,7 @@
-import React, { useEffect } from 'react'
-import { fetchApi } from '../../services/fetchApi'
-import { useState } from 'react'
 import { Link } from 'react-router-dom';
 
 
-const pathRouteApiRoles = 'roles'; 
-
 export const FormUser = ({ urlPostApi, titleForm, redirect }) => {
-
-    const [roles, setroles] = useState([]);
-
-    useEffect(() => {
-        fetchApi(pathRouteApiRoles)
-            .then(data => setroles(data))
-    }, []);
 
     return (
         <>
@@ -39,16 +27,6 @@ export const FormUser = ({ urlPostApi, titleForm, redirect }) => {
                 <div className='mb-3' >
                     <label className='form-label' htmlFor="phone">Teléfono</label>
                     <input className='form-control' type="tel" name='phone' />
-                </div>
-
-                <div className='mb-3' >
-                    <label className='form-label' htmlFor="roles">Selección de rol</label>
-                    <select className='form-select' name="roles[]" id="roles" >
-                        <option value="">Selecciona una opción</option>
-                        { roles &&  roles.map(role => {
-                            return <option key={role.id} value={role.id} >{role.name}</option>
-                        })}
-                    </select>
                 </div>
 
                 <div className='mb-3' >
